@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gushwork — Hire World-Class Remote Talent</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== STICKY HEADER (appears on scroll) ===== -->
+  <header class="sticky-header" id="stickyHeader" aria-label="Sticky navigation">
+    <div class="sticky-header__inner">
+      <a href="#" class="logo logo--small">
+        <span class="logo__mark">G</span>
+        <span class="logo__text">gushwork</span>
+      </a>
+      <nav class="sticky-nav" aria-label="Sticky nav">
+        <a href="#how-it-works">How it works</a>
+        <a href="#talent">Talent</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Stories</a>
+      </nav>
+      <div class="sticky-header__cta">
+        <a href="#" class="btn btn--outline btn--sm">Log in</a>
+        <a href="#" class="btn btn--primary btn--sm">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN NAVBAR (first fold) ===== -->
+  <nav class="navbar" id="mainNav" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="#" class="logo">
+        <span class="logo__mark">G</span>
+        <span class="logo__text">gushwork</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#talent">Talent</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Stories</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="#" class="btn btn--ghost">Log in</a>
+        <a href="#" class="btn btn--primary">Get started →</a>
+      </div>
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#how-it-works">How it works</a>
+      <a href="#talent">Talent</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#testimonials">Stories</a>
+      <a href="#" class="btn btn--primary" style="margin-top:0.5rem;">Get started →</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero" aria-labelledby="heroHeading">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="badge__dot"></span>
+        Trusted by 500+ companies worldwide
+      </div>
+      <h1 class="hero__heading" id="heroHeading">
+        Hire <em>world-class</em><br />
+        remote talent,<br />
+        <span class="hero__heading--accent">in 48 hours.</span>
+      </h1>
+      <p class="hero__subtext">
+        Gushwork connects you with pre-vetted, top 1% developers, designers,
+        and operators — so you can build faster without the hiring headache.
+      </p>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--primary btn--lg">Start hiring today →</a>
+        <a href="#how-it-works" class="btn btn--ghost btn--lg">See how it works</a>
+      </div>
+      <div class="hero__stats" role="list">
+        <div class="stat" role="listitem">
+          <span class="stat__number">48h</span>
+          <span class="stat__label">Average placement</span>
+        </div>
+        <div class="stat__divider" aria-hidden="true"></div>
+        <div class="stat" role="listitem">
+          <span class="stat__number">top 1%</span>
+          <span class="stat__label">Vetted talent</span>
+        </div>
+        <div class="stat__divider" aria-hidden="true"></div>
+        <div class="stat" role="listitem">
+          <span class="stat__number">500+</span>
+          <span class="stat__label">Companies served</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__card hero__card--main">
+        <div class="card-avatar card-avatar--lg">
+          <img src="https://i.pravatar.cc/80?img=11" alt="Priya Sharma" loading="lazy" />
+        </div>
+        <div class="card-info">
+          <p class="card-info__name">Priya Sharma</p>
+          <p class="card-info__role">Senior Full-Stack Engineer</p>
+          <div class="card-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">AWS</span>
+          </div>
+        </div>
+        <div class="card-status card-status--available">● Available</div>
+      </div>
+      <div class="hero__card hero__card--secondary hero__card--top-right">
+        <div class="card-avatar">
+          <img src="https://i.pravatar.cc/80?img=32" alt="Carlos M" loading="lazy" />
+        </div>
+        <div class="card-info">
+          <p class="card-info__name">Carlos M.</p>
+          <p class="card-info__role">Product Designer</p>
+        </div>
+        <div class="card-status card-status--available">● Available</div>
+      </div>
+      <div class="hero__card hero__card--secondary hero__card--bottom-left">
+        <div class="card-avatar">
+          <img src="https://i.pravatar.cc/80?img=57" alt="Alex Chen" loading="lazy" />
+        </div>
+        <div class="card-info">
+          <p class="card-info__name">Alex Chen</p>
+          <p class="card-info__role">Data Engineer</p>
+        </div>
+        <div class="card-status card-status--available">● Available</div>
+      </div>
+      <div class="hero__floating-badge">
+        <span>🚀</span> Matched in 48h
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUSTED BY LOGOS ===== -->
+  <section class="logos-strip" aria-label="Trusted by companies">
+    <div class="logos-strip__inner">
+      <p class="logos-strip__label">Trusted by teams at</p>
+      <div class="logos-track" aria-hidden="true">
+        <!-- Repeated for seamless loop -->
+        <div class="logos-track__inner">
+          <span class="logo-item">Notion</span>
+          <span class="logo-item">Linear</span>
+          <span class="logo-item">Vercel</span>
+          <span class="logo-item">Stripe</span>
+          <span class="logo-item">Figma</span>
+          <span class="logo-item">Loom</span>
+          <span class="logo-item">Pitch</span>
+          <span class="logo-item">Miro</span>
+          <span class="logo-item">Notion</span>
+          <span class="logo-item">Linear</span>
+          <span class="logo-item">Vercel</span>
+          <span class="logo-item">Stripe</span>
+          <span class="logo-item">Figma</span>
+          <span class="logo-item">Loom</span>
+          <span class="logo-item">Pitch</span>
+          <span class="logo-item">Miro</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works" aria-labelledby="howHeading">
+    <div class="section-inner">
+      <div class="section-label">Process</div>
+      <h2 class="section-heading" id="howHeading">How Gushwork works</h2>
+      <p class="section-subtext">From brief to first commit — in under two days.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-card__number">01</div>
+          <h3 class="step-card__title">Share your brief</h3>
+          <p class="step-card__desc">Tell us what you need — role, skills, timezone, and engagement type. Takes under 10 minutes.</p>
+        </div>
+        <div class="step-card__connector" aria-hidden="true">→</div>
+        <div class="step-card">
+          <div class="step-card__number">02</div>
+          <h3 class="step-card__title">Meet your matches</h3>
+          <p class="step-card__desc">We hand-pick 2–3 pre-vetted candidates from our network. No recruiters, no cold resumes.</p>
+        </div>
+        <div class="step-card__connector" aria-hidden="true">→</div>
+        <div class="step-card">
+          <div class="step-card__number">03</div>
+          <h3 class="step-card__title">Hire & onboard</h3>
+          <p class="step-card__desc">Pick your favourite, sign a simple contract, and get them onboarded within 48 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TALENT CAROUSEL SECTION ===== -->
+  <section class="talent-section" id="talent" aria-labelledby="talentHeading">
+    <div class="section-inner">
+      <div class="section-label">Our talent</div>
+      <h2 class="section-heading" id="talentHeading">Meet world-class talent</h2>
+      <p class="section-subtext">Every professional is interviewed, skill-tested, and reference-checked before joining our network.</p>
+    </div>
+
+    <!-- Image Carousel with Zoom -->
+    <div class="carousel-wrapper" role="region" aria-label="Talent carousel" aria-roledescription="carousel">
+      <div class="carousel" id="carousel">
+        <!-- Cards are generated by JS for flexibility, or inline here -->
+        <div class="carousel__card" tabindex="0" aria-label="Aisha K, Mobile Engineer">
+          <div class="carousel__img-wrapper">
+            <img src="https://i.pravatar.cc/300?img=5" alt="Aisha K" class="carousel__img" loading="lazy" />
+            <!-- Zoom preview -->
+            <div class="carousel__zoom" aria-hidden="true">
+              <img src="https://i.pravatar.cc/300?img=5" alt="" />
+              <div class="zoom__info">
+                <p class="zoom__name">Aisha K.</p>
+                <p class="zoom__role">Mobile Engineer</p>
+                <div class="zoom__tags">
+                  <span>React Native</span><span>Swift</span><span>Firebase</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__meta">
+            <p class="carousel__name">Aisha K.</p>
+            <p class="carousel__role">Mobile Engineer</p>
+          </div>
+        </div>
+
+        <div class="carousel__card" tabindex="0" aria-label="Marcus L, Backend Engineer">
+          <div class="carousel__img-wrapper">
+            <img src="https://i.pravatar.cc/300?img=12" alt="Marcus L" class="carousel__img" loading="lazy" />
+            <div class="carousel__zoom" aria-hidden="true">
+              <img src="https://i.pravatar.cc/300?img=12" alt="" />
+              <div class="zoom__info">
+                <p class="zoom__name">Marcus L.</p>
+                <p class="zoom__role">Backend Engineer</p>
+                <div class="zoom__tags">
+                  <span>Go</span><span>PostgreSQL</span><span>Kafka</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__meta">
+            <p class="carousel__name">Marcus L.</p>
+            <p class="carousel__role">Backend Engineer</p>
+          </div>
+        </div>
+
+        <div class="carousel__card" tabindex="0" aria-label="Priya S, Full-Stack Engineer">
+          <div class="carousel__img-wrapper">
+            <img src="https://i.pravatar.cc/300?img=20" alt="Priya S" class="carousel__img" loading="lazy" />
+            <div class="carousel__zoom" aria-hidden="true">
+              <img src="https://i.pravatar.cc/300?img=20" alt="" />
+              <div class="zoom__info">
+                <p class="zoom__name">Priya S.</p>
+                <p class="zoom__role">Full-Stack Engineer</p>
+                <div class="zoom__tags">
+                  <span>Next.js</span><span>Node</span><span>AWS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__meta">
+            <p class="carousel__name">Priya S.</p>
+            <p class="carousel__role">Full-Stack Engineer</p>
+          </div>
+        </div>
+
+        <div class="carousel__card" tabindex="0" aria-label="Daniel O, Product Designer">
+          <div class="carousel__img-wrapper">
+            <img src="https://i.pravatar.cc/300?img=33" alt="Daniel O" class="carousel__img" loading="lazy" />
+            <div class="carousel__zoom" aria-hidden="true">
+              <img src="https://i.pravatar.cc/300?img=33" alt="" />
+              <div class="zoom__info">
+                <p class="zoom__name">Daniel O.</p>
+                <p class="zoom__role">Product Designer</p>
+                <div class="zoom__tags">
+                  <span>Figma</span><span>Framer</span><span>UX Research</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__meta">
+            <p class="carousel__name">Daniel O.</p>
+            <p class="carousel__role">Product Designer</p>
+          </div>
+        </div>
+
+        <div class="carousel__card" tabindex="0" aria-label="Sofia R, DevOps Engineer">
+          <div class="carousel__img-wrapper">
+            <img src="https://i.pravatar.cc/300?img=44" alt="Sofia R" class="carousel__img" loading="lazy" />
+            <div class="carousel__zoom" aria-hidden="true">
+              <img src="https://i.pravatar.cc/300?img=44" alt="" />
+              <div class="zoom__info">
+                <p class="zoom__name">Sofia R.</p>
+                <p class="zoom__role">DevOps Engineer</p>
+                <div class="zoom__tags">
+                  <span>Kubernetes</span><span>Terraform</span><span>GCP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__meta">
+            <p class="carousel__name">Sofia R.</p>
+            <p class="carousel__role">DevOps Engineer</p>
+          </div>
+        </div>
+
+        <div class="carousel__card" tabindex="0" aria-label="Jin W, Data Scientist">
+          <div class="carousel__img-wrapper">
+            <img src="https://i.pravatar.cc/300?img=56" alt="Jin W" class="carousel__img" loading="lazy" />
+            <div class="carousel__zoom" aria-hidden="true">
+              <img src="https://i.pravatar.cc/300?img=56" alt="" />
+              <div class="zoom__info">
+                <p class="zoom__name">Jin W.</p>
+                <p class="zoom__role">Data Scientist</p>
+                <div class="zoom__tags">
+                  <span>Python</span><span>PyTorch</span><span>SQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__meta">
+            <p class="carousel__name">Jin W.</p>
+            <p class="carousel__role">Data Scientist</p>
+          </div>
+        </div>
+
+        <div class="carousel__card" tabindex="0" aria-label="Mia P, Frontend Engineer">
+          <div class="carousel__img-wrapper">
+            <img src="https://i.pravatar.cc/300?img=47" alt="Mia P" class="carousel__img" loading="lazy" />
+            <div class="carousel__zoom" aria-hidden="true">
+              <img src="https://i.pravatar.cc/300?img=47" alt="" />
+              <div class="zoom__info">
+                <p class="zoom__name">Mia P.</p>
+                <p class="zoom__role">Frontend Engineer</p>
+                <div class="zoom__tags">
+                  <span>Vue</span><span>TypeScript</span><span>WebGL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__meta">
+            <p class="carousel__name">Mia P.</p>
+            <p class="carousel__role">Frontend Engineer</p>
+          </div>
+        </div>
+
+      </div><!-- /.carousel -->
+
+      <!-- Carousel controls -->
+      <div class="carousel__controls" aria-label="Carousel controls">
+        <button class="carousel__btn" id="prevBtn" aria-label="Previous talent">&#8592;</button>
+        <div class="carousel__dots" id="carouselDots" role="tablist" aria-label="Carousel navigation"></div>
+        <button class="carousel__btn" id="nextBtn" aria-label="Next talent">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING SECTION ===== -->
+  <section class="pricing" id="pricing" aria-labelledby="pricingHeading">
+    <div class="section-inner">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-heading" id="pricingHeading">Simple, transparent pricing</h2>
+      <p class="section-subtext">No hidden fees. No recruiter commissions. Just great talent.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3>Starter</h3>
+            <div class="pricing-card__price"><span class="price-amount">$499</span><span class="price-period">/mo</span></div>
+          </div>
+          <ul class="pricing-card__features" role="list">
+            <li>1 dedicated talent</li>
+            <li>Part-time (20 hrs/week)</li>
+            <li>Replacement guarantee</li>
+            <li>Slack & email support</li>
+          </ul>
+          <a href="#" class="btn btn--outline btn--full">Get started</a>
+        </div>
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-card__badge">Most popular</div>
+          <div class="pricing-card__header">
+            <h3>Growth</h3>
+            <div class="pricing-card__price"><span class="price-amount">$999</span><span class="price-period">/mo</span></div>
+          </div>
+          <ul class="pricing-card__features" role="list">
+            <li>2 dedicated talents</li>
+            <li>Full-time (40 hrs/week)</li>
+            <li>Priority matching (24h)</li>
+            <li>Dedicated account manager</li>
+            <li>Weekly performance reports</li>
+          </ul>
+          <a href="#" class="btn btn--primary btn--full">Get started →</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3>Enterprise</h3>
+            <div class="pricing-card__price"><span class="price-amount">Custom</span></div>
+          </div>
+          <ul class="pricing-card__features" role="list">
+            <li>Unlimited talent</li>
+            <li>Custom SLA</li>
+            <li>On-site option</li>
+            <li>Legal & compliance support</li>
+            <li>Custom integrations</li>
+          </ul>
+          <a href="#" class="btn btn--outline btn--full">Contact sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials" aria-labelledby="testimonialsHeading">
+    <div class="section-inner">
+      <div class="section-label">Stories</div>
+      <h2 class="section-heading" id="testimonialsHeading">What our clients say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">"We hired a senior engineer in 36 hours. The candidate was better than anyone we'd found in months of traditional recruiting."</p>
+          <div class="testimonial-card__author">
+            <img src="https://i.pravatar.cc/60?img=8" alt="Sarah K." loading="lazy" />
+            <div>
+              <p class="author-name">Sarah K.</p>
+              <p class="author-title">CTO, Fintech startup</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">"Gushwork is our secret weapon. We've scaled our engineering team from 3 to 18 in under a year — all through them."</p>
+          <div class="testimonial-card__author">
+            <img src="https://i.pravatar.cc/60?img=15" alt="James T." loading="lazy" />
+            <div>
+              <p class="author-name">James T.</p>
+              <p class="author-title">CEO, SaaS platform</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">"The vetting process is rigorous. Everyone we've hired has been exceptional and integrated seamlessly with our team."</p>
+          <div class="testimonial-card__author">
+            <img src="https://i.pravatar.cc/60?img=25" alt="Rekha P." loading="lazy" />
+            <div>
+              <p class="author-name">Rekha P.</p>
+              <p class="author-title">VP Engineering, Scale-up</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA STRIP ===== -->
+  <section class="cta-strip" aria-label="Call to action">
+    <div class="cta-strip__inner">
+      <h2 class="cta-strip__heading">Ready to hire better, faster?</h2>
+      <p class="cta-strip__sub">Join 500+ companies building with world-class remote talent.</p>
+      <a href="#" class="btn btn--white btn--lg">Start hiring today →</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo">
+          <span class="logo__mark">G</span>
+          <span class="logo__text">gushwork</span>
+        </a>
+        <p class="footer__tagline">World-class remote talent, placed in 48 hours.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer navigation">
+        <div class="footer__col">
+          <p class="footer__col-heading">Product</p>
+          <a href="#">How it works</a>
+          <a href="#">Talent network</a>
+          <a href="#">Pricing</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-heading">Company</p>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-heading">Legal</p>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 Gushwork. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
