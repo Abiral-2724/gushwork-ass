@@ -3,452 +3,385 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gushwork — Hire World-Class Remote Talent</title>
+  <title>Mangalam HDPE Pipes — Premium HDPE Pipes &amp; Coils</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ===== STICKY HEADER (appears on scroll) ===== -->
-  <header class="sticky-header" id="stickyHeader" aria-label="Sticky navigation">
-    <div class="sticky-header__inner">
-      <a href="#" class="logo logo--small">
-        <span class="logo__mark">G</span>
-        <span class="logo__text">gushwork</span>
+  <!-- ===== STICKY HEADER ===== -->
+  <header class="sticky-header" id="stickyHeader">
+    <div class="container sticky-header__inner">
+      <a href="#" class="logo">
+        <div class="logo__wordmark">
+          <span class="logo__name">M<span class="logo__rest">ANGALAM</span></span>
+          <span class="logo__sub">HDPE <span class="logo__pipe">|</span> PIPES</span>
+        </div>
       </a>
-      <nav class="sticky-nav" aria-label="Sticky nav">
-        <a href="#how-it-works">How it works</a>
-        <a href="#talent">Talent</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#testimonials">Stories</a>
+      <nav>
+        <a href="#about">About Us</a>
+        <a href="#products">Products <span class="nav-arrow">&#8964;</span></a>
       </nav>
-      <div class="sticky-header__cta">
-        <a href="#" class="btn btn--outline btn--sm">Log in</a>
-        <a href="#" class="btn btn--primary btn--sm">Get started</a>
-      </div>
+      <a href="#contact" class="btn btn-navy">Contact Us</a>
     </div>
   </header>
 
-  <!-- ===== MAIN NAVBAR (first fold) ===== -->
-  <nav class="navbar" id="mainNav" aria-label="Main navigation">
-    <div class="navbar__inner">
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
       <a href="#" class="logo">
-        <span class="logo__mark">G</span>
-        <span class="logo__text">gushwork</span>
+        <div class="logo__wordmark">
+          <span class="logo__name">M<span class="logo__rest">ANGALAM</span></span>
+          <span class="logo__sub">HDPE <span class="logo__pipe">|</span> PIPES</span>
+        </div>
       </a>
-      <ul class="nav__links" role="list">
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#talent">Talent</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#testimonials">Stories</a></li>
-      </ul>
-      <div class="nav__actions">
-        <a href="#" class="btn btn--ghost">Log in</a>
-        <a href="#" class="btn btn--primary">Get started →</a>
+      <div class="navbar__links">
+        <a href="#about">About Us</a>
+        <a href="#products">Products <span class="nav-arrow">&#8964;</span></a>
       </div>
-      <!-- Mobile hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <a href="#contact" class="btn btn-navy">Contact Us</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <a href="#how-it-works">How it works</a>
-      <a href="#talent">Talent</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#testimonials">Stories</a>
-      <a href="#" class="btn btn--primary" style="margin-top:0.5rem;">Get started →</a>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About Us</a>
+      <a href="#products">Products</a>
+      <a href="#contact" class="btn btn-navy">Contact Us</a>
     </div>
   </nav>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="hero" aria-labelledby="heroHeading">
-    <div class="hero__bg-grid" aria-hidden="true"></div>
-    <div class="hero__content">
-      <div class="hero__badge">
-        <span class="badge__dot"></span>
-        Trusted by 500+ companies worldwide
-      </div>
-      <h1 class="hero__heading" id="heroHeading">
-        Hire <em>world-class</em><br />
-        remote talent,<br />
-        <span class="hero__heading--accent">in 48 hours.</span>
-      </h1>
-      <p class="hero__subtext">
-        Gushwork connects you with pre-vetted, top 1% developers, designers,
-        and operators — so you can build faster without the hiring headache.
-      </p>
-      <div class="hero__actions">
-        <a href="#" class="btn btn--primary btn--lg">Start hiring today →</a>
-        <a href="#how-it-works" class="btn btn--ghost btn--lg">See how it works</a>
-      </div>
-      <div class="hero__stats" role="list">
-        <div class="stat" role="listitem">
-          <span class="stat__number">48h</span>
-          <span class="stat__label">Average placement</span>
-        </div>
-        <div class="stat__divider" aria-hidden="true"></div>
-        <div class="stat" role="listitem">
-          <span class="stat__number">top 1%</span>
-          <span class="stat__label">Vetted talent</span>
-        </div>
-        <div class="stat__divider" aria-hidden="true"></div>
-        <div class="stat" role="listitem">
-          <span class="stat__number">500+</span>
-          <span class="stat__label">Companies served</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero__visual" aria-hidden="true">
-      <div class="hero__card hero__card--main">
-        <div class="card-avatar card-avatar--lg">
-          <img src="https://i.pravatar.cc/80?img=11" alt="Priya Sharma" loading="lazy" />
-        </div>
-        <div class="card-info">
-          <p class="card-info__name">Priya Sharma</p>
-          <p class="card-info__role">Senior Full-Stack Engineer</p>
-          <div class="card-tags">
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">AWS</span>
+  <!-- ===== HERO / PRODUCT PAGE ===== -->
+  <section class="hero">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#">Products</a>
+        <span>&#8250;</span>
+        <span>Two For One Twister</span>
+      </nav>
+
+      <div class="hero__grid">
+        <!-- Gallery -->
+        <div class="gallery">
+          <div class="gallery__stage">
+            <button class="gallery__arrow gallery__arrow--left" id="galPrev">&#8592;</button>
+            <div class="gallery__main-wrap" id="galWrap">
+              <img
+                id="mainImg"
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80"
+                alt="HDPE Pipe installation"
+                class="gallery__main-img"
+              />
+              <!-- Zoom lens -->
+              <div class="zoom-lens" id="zoomLens"></div>
+            </div>
+            <button class="gallery__arrow gallery__arrow--right" id="galNext">&#8594;</button>
           </div>
-        </div>
-        <div class="card-status card-status--available">● Available</div>
-      </div>
-      <div class="hero__card hero__card--secondary hero__card--top-right">
-        <div class="card-avatar">
-          <img src="https://i.pravatar.cc/80?img=32" alt="Carlos M" loading="lazy" />
-        </div>
-        <div class="card-info">
-          <p class="card-info__name">Carlos M.</p>
-          <p class="card-info__role">Product Designer</p>
-        </div>
-        <div class="card-status card-status--available">● Available</div>
-      </div>
-      <div class="hero__card hero__card--secondary hero__card--bottom-left">
-        <div class="card-avatar">
-          <img src="https://i.pravatar.cc/80?img=57" alt="Alex Chen" loading="lazy" />
-        </div>
-        <div class="card-info">
-          <p class="card-info__name">Alex Chen</p>
-          <p class="card-info__role">Data Engineer</p>
-        </div>
-        <div class="card-status card-status--available">● Available</div>
-      </div>
-      <div class="hero__floating-badge">
-        <span>🚀</span> Matched in 48h
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TRUSTED BY LOGOS ===== -->
-  <section class="logos-strip" aria-label="Trusted by companies">
-    <div class="logos-strip__inner">
-      <p class="logos-strip__label">Trusted by teams at</p>
-      <div class="logos-track" aria-hidden="true">
-        <!-- Repeated for seamless loop -->
-        <div class="logos-track__inner">
-          <span class="logo-item">Notion</span>
-          <span class="logo-item">Linear</span>
-          <span class="logo-item">Vercel</span>
-          <span class="logo-item">Stripe</span>
-          <span class="logo-item">Figma</span>
-          <span class="logo-item">Loom</span>
-          <span class="logo-item">Pitch</span>
-          <span class="logo-item">Miro</span>
-          <span class="logo-item">Notion</span>
-          <span class="logo-item">Linear</span>
-          <span class="logo-item">Vercel</span>
-          <span class="logo-item">Stripe</span>
-          <span class="logo-item">Figma</span>
-          <span class="logo-item">Loom</span>
-          <span class="logo-item">Pitch</span>
-          <span class="logo-item">Miro</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="how-it-works" id="how-it-works" aria-labelledby="howHeading">
-    <div class="section-inner">
-      <div class="section-label">Process</div>
-      <h2 class="section-heading" id="howHeading">How Gushwork works</h2>
-      <p class="section-subtext">From brief to first commit — in under two days.</p>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-card__number">01</div>
-          <h3 class="step-card__title">Share your brief</h3>
-          <p class="step-card__desc">Tell us what you need — role, skills, timezone, and engagement type. Takes under 10 minutes.</p>
-        </div>
-        <div class="step-card__connector" aria-hidden="true">→</div>
-        <div class="step-card">
-          <div class="step-card__number">02</div>
-          <h3 class="step-card__title">Meet your matches</h3>
-          <p class="step-card__desc">We hand-pick 2–3 pre-vetted candidates from our network. No recruiters, no cold resumes.</p>
-        </div>
-        <div class="step-card__connector" aria-hidden="true">→</div>
-        <div class="step-card">
-          <div class="step-card__number">03</div>
-          <h3 class="step-card__title">Hire & onboard</h3>
-          <p class="step-card__desc">Pick your favourite, sign a simple contract, and get them onboarded within 48 hours.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TALENT CAROUSEL SECTION ===== -->
-  <section class="talent-section" id="talent" aria-labelledby="talentHeading">
-    <div class="section-inner">
-      <div class="section-label">Our talent</div>
-      <h2 class="section-heading" id="talentHeading">Meet world-class talent</h2>
-      <p class="section-subtext">Every professional is interviewed, skill-tested, and reference-checked before joining our network.</p>
-    </div>
-
-    <!-- Image Carousel with Zoom -->
-    <div class="carousel-wrapper" role="region" aria-label="Talent carousel" aria-roledescription="carousel">
-      <div class="carousel" id="carousel">
-        <!-- Cards are generated by JS for flexibility, or inline here -->
-        <div class="carousel__card" tabindex="0" aria-label="Aisha K, Mobile Engineer">
-          <div class="carousel__img-wrapper">
-            <img src="https://i.pravatar.cc/300?img=5" alt="Aisha K" class="carousel__img" loading="lazy" />
-            <!-- Zoom preview -->
-            <div class="carousel__zoom" aria-hidden="true">
-              <img src="https://i.pravatar.cc/300?img=5" alt="" />
-              <div class="zoom__info">
-                <p class="zoom__name">Aisha K.</p>
-                <p class="zoom__role">Mobile Engineer</p>
-                <div class="zoom__tags">
-                  <span>React Native</span><span>Swift</span><span>Firebase</span>
-                </div>
-              </div>
+          <!-- Zoom result panel -->
+          <div class="zoom-result" id="zoomResult"></div>
+          <!-- Thumbnails -->
+          <div class="gallery__thumbs" id="galThumbs">
+            <div class="gallery__thumb active" data-src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=120&q=60" alt="" />
+            </div>
+            <div class="gallery__thumb" data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&q=60" alt="" />
+            </div>
+            <div class="gallery__thumb" data-src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=700&q=80">
+              <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=120&q=60" alt="" />
+            </div>
+            <div class="gallery__thumb" data-src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=700&q=80">
+              <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=120&q=60" alt="" />
+            </div>
+            <div class="gallery__thumb" data-src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=700&q=80">
+              <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=120&q=60" alt="" />
+            </div>
+            <div class="gallery__thumb" data-src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=50">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=120&q=50" alt="" />
             </div>
           </div>
-          <div class="carousel__meta">
-            <p class="carousel__name">Aisha K.</p>
-            <p class="carousel__role">Mobile Engineer</p>
-          </div>
         </div>
 
-        <div class="carousel__card" tabindex="0" aria-label="Marcus L, Backend Engineer">
-          <div class="carousel__img-wrapper">
-            <img src="https://i.pravatar.cc/300?img=12" alt="Marcus L" class="carousel__img" loading="lazy" />
-            <div class="carousel__zoom" aria-hidden="true">
-              <img src="https://i.pravatar.cc/300?img=12" alt="" />
-              <div class="zoom__info">
-                <p class="zoom__name">Marcus L.</p>
-                <p class="zoom__role">Backend Engineer</p>
-                <div class="zoom__tags">
-                  <span>Go</span><span>PostgreSQL</span><span>Kafka</span>
-                </div>
-              </div>
-            </div>
+        <!-- Product info -->
+        <div class="product-info">
+          <div class="cert-badges">
+            <span class="cert-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              BIS Certified
+            </span>
+            <span class="cert-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+              ISO Certified
+            </span>
+            <span class="cert-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              CE Certified
+            </span>
           </div>
-          <div class="carousel__meta">
-            <p class="carousel__name">Marcus L.</p>
-            <p class="carousel__role">Backend Engineer</p>
-          </div>
-        </div>
 
-        <div class="carousel__card" tabindex="0" aria-label="Priya S, Full-Stack Engineer">
-          <div class="carousel__img-wrapper">
-            <img src="https://i.pravatar.cc/300?img=20" alt="Priya S" class="carousel__img" loading="lazy" />
-            <div class="carousel__zoom" aria-hidden="true">
-              <img src="https://i.pravatar.cc/300?img=20" alt="" />
-              <div class="zoom__info">
-                <p class="zoom__name">Priya S.</p>
-                <p class="zoom__role">Full-Stack Engineer</p>
-                <div class="zoom__tags">
-                  <span>Next.js</span><span>Node</span><span>AWS</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel__meta">
-            <p class="carousel__name">Priya S.</p>
-            <p class="carousel__role">Full-Stack Engineer</p>
-          </div>
-        </div>
+          <h1 class="product-info__title">Premium HDPE Pipes<br>&amp; Coils for Modern<br>Infrastructure</h1>
 
-        <div class="carousel__card" tabindex="0" aria-label="Daniel O, Product Designer">
-          <div class="carousel__img-wrapper">
-            <img src="https://i.pravatar.cc/300?img=33" alt="Daniel O" class="carousel__img" loading="lazy" />
-            <div class="carousel__zoom" aria-hidden="true">
-              <img src="https://i.pravatar.cc/300?img=33" alt="" />
-              <div class="zoom__info">
-                <p class="zoom__name">Daniel O.</p>
-                <p class="zoom__role">Product Designer</p>
-                <div class="zoom__tags">
-                  <span>Figma</span><span>Framer</span><span>UX Research</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel__meta">
-            <p class="carousel__name">Daniel O.</p>
-            <p class="carousel__role">Product Designer</p>
-          </div>
-        </div>
-
-        <div class="carousel__card" tabindex="0" aria-label="Sofia R, DevOps Engineer">
-          <div class="carousel__img-wrapper">
-            <img src="https://i.pravatar.cc/300?img=44" alt="Sofia R" class="carousel__img" loading="lazy" />
-            <div class="carousel__zoom" aria-hidden="true">
-              <img src="https://i.pravatar.cc/300?img=44" alt="" />
-              <div class="zoom__info">
-                <p class="zoom__name">Sofia R.</p>
-                <p class="zoom__role">DevOps Engineer</p>
-                <div class="zoom__tags">
-                  <span>Kubernetes</span><span>Terraform</span><span>GCP</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel__meta">
-            <p class="carousel__name">Sofia R.</p>
-            <p class="carousel__role">DevOps Engineer</p>
-          </div>
-        </div>
-
-        <div class="carousel__card" tabindex="0" aria-label="Jin W, Data Scientist">
-          <div class="carousel__img-wrapper">
-            <img src="https://i.pravatar.cc/300?img=56" alt="Jin W" class="carousel__img" loading="lazy" />
-            <div class="carousel__zoom" aria-hidden="true">
-              <img src="https://i.pravatar.cc/300?img=56" alt="" />
-              <div class="zoom__info">
-                <p class="zoom__name">Jin W.</p>
-                <p class="zoom__role">Data Scientist</p>
-                <div class="zoom__tags">
-                  <span>Python</span><span>PyTorch</span><span>SQL</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel__meta">
-            <p class="carousel__name">Jin W.</p>
-            <p class="carousel__role">Data Scientist</p>
-          </div>
-        </div>
-
-        <div class="carousel__card" tabindex="0" aria-label="Mia P, Frontend Engineer">
-          <div class="carousel__img-wrapper">
-            <img src="https://i.pravatar.cc/300?img=47" alt="Mia P" class="carousel__img" loading="lazy" />
-            <div class="carousel__zoom" aria-hidden="true">
-              <img src="https://i.pravatar.cc/300?img=47" alt="" />
-              <div class="zoom__info">
-                <p class="zoom__name">Mia P.</p>
-                <p class="zoom__role">Frontend Engineer</p>
-                <div class="zoom__tags">
-                  <span>Vue</span><span>TypeScript</span><span>WebGL</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel__meta">
-            <p class="carousel__name">Mia P.</p>
-            <p class="carousel__role">Frontend Engineer</p>
-          </div>
-        </div>
-
-      </div><!-- /.carousel -->
-
-      <!-- Carousel controls -->
-      <div class="carousel__controls" aria-label="Carousel controls">
-        <button class="carousel__btn" id="prevBtn" aria-label="Previous talent">&#8592;</button>
-        <div class="carousel__dots" id="carouselDots" role="tablist" aria-label="Carousel navigation"></div>
-        <button class="carousel__btn" id="nextBtn" aria-label="Next talent">&#8594;</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PRICING SECTION ===== -->
-  <section class="pricing" id="pricing" aria-labelledby="pricingHeading">
-    <div class="section-inner">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-heading" id="pricingHeading">Simple, transparent pricing</h2>
-      <p class="section-subtext">No hidden fees. No recruiter commissions. Just great talent.</p>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="pricing-card__header">
-            <h3>Starter</h3>
-            <div class="pricing-card__price"><span class="price-amount">$499</span><span class="price-period">/mo</span></div>
-          </div>
-          <ul class="pricing-card__features" role="list">
-            <li>1 dedicated talent</li>
-            <li>Part-time (20 hrs/week)</li>
-            <li>Replacement guarantee</li>
-            <li>Slack & email support</li>
+          <ul class="product-info__features">
+            <li><span class="check-blue">&#10004;</span> Leak-Proof Fusion Joints</li>
+            <li><span class="check-blue">&#10004;</span> Chemical Resistance</li>
+            <li><span class="check-blue">&#10004;</span> 50+ Year Service Life</li>
+            <li><span class="check-blue">&#10004;</span> Flexible Installation</li>
+            <li><span class="check-blue">&#10004;</span> Flexible Installation</li>
           </ul>
-          <a href="#" class="btn btn--outline btn--full">Get started</a>
-        </div>
-        <div class="pricing-card pricing-card--featured">
-          <div class="pricing-card__badge">Most popular</div>
-          <div class="pricing-card__header">
-            <h3>Growth</h3>
-            <div class="pricing-card__price"><span class="price-amount">$999</span><span class="price-period">/mo</span></div>
+
+          <div class="price-box">
+            <p class="price-label">Price Range</p>
+            <p class="price-value">&#8377;4,80,000 - 7,90,000</p>
+            <div class="price-tags">
+              <span class="price-tag">Shipping: 6-12 days</span>
+              <span class="price-tag">Returns: If returned within 7 days</span>
+            </div>
           </div>
-          <ul class="pricing-card__features" role="list">
-            <li>2 dedicated talents</li>
-            <li>Full-time (40 hrs/week)</li>
-            <li>Priority matching (24h)</li>
-            <li>Dedicated account manager</li>
-            <li>Weekly performance reports</li>
-          </ul>
-          <a href="#" class="btn btn--primary btn--full">Get started →</a>
-        </div>
-        <div class="pricing-card">
-          <div class="pricing-card__header">
-            <h3>Enterprise</h3>
-            <div class="pricing-card__price"><span class="price-amount">Custom</span></div>
+
+          <div class="product-info__cta">
+            <a href="#contact" class="btn btn-navy btn-lg">Get Custom Quote</a>
+            <a href="#specs" class="btn btn-outline btn-lg">View Technical Specs <span>&#8250;</span></a>
           </div>
-          <ul class="pricing-card__features" role="list">
-            <li>Unlimited talent</li>
-            <li>Custom SLA</li>
-            <li>On-site option</li>
-            <li>Legal & compliance support</li>
-            <li>Custom integrations</li>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trusted strip -->
+    <div class="trusted-strip">
+      <p class="trusted-strip__label">Trusted by Hundreds of Companies Globally</p>
+      <div class="trusted-logos">
+        <span>EURO<b style="color:#E84646">F</b>LEX<br><small>WE CREATE SOLUTIONS</small></span>
+        <span>EURO<b style="color:#E84646">F</b>LEX<br><small>WE CREATE SOLUTIONS</small></span>
+        <span>EURO<b style="color:#E84646">F</b>LEX<br><small>WE CREATE SOLUTIONS</small></span>
+        <span>EURO<b style="color:#E84646">F</b>LEX<br><small>WE CREATE SOLUTIONS</small></span>
+        <span>EURO<b style="color:#E84646">F</b>LEX<br><small>WE CREATE SOLUTIONS</small></span>
+        <span>EURO<b style="color:#E84646">F</b>LEX<br><small>WE CREATE SOLUTIONS</small></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features section-pad">
+    <div class="container">
+      <h2 class="section-h2 align-left">Built to Last. Engineered to Perform.</h2>
+      <p class="section-p align-left">From bulk bags to technical threads, Meera delivers precision solutions for every stage of your packaging process.</p>
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          </div>
+          <h3>Superior Chemical Resistance</h3>
+          <p>HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="1.6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Exceptional Flexibility &amp; Durability</h3>
+          <p>HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="1.6"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
+          </div>
+          <h3>Leak-Proof Fusion Welding</h3>
+          <p>HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41"/></svg>
+          </div>
+          <h3>Cost-Effective Long-Term Solution</h3>
+          <p>HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41"/></svg>
+          </div>
+          <h3>Environmentally Sustainable</h3>
+          <p>HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41"/></svg>
+          </div>
+          <h3>Certified Quality Assurance</h3>
+          <p>HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.</p>
+        </div>
+      </div>
+      <div class="center-cta">
+        <a href="#contact" class="btn btn-navy btn-lg">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MANUFACTURING PROCESS ===== -->
+  <section class="process section-pad" id="process">
+    <div class="container">
+      <h2 class="section-h2 align-center">Advanced HDPE Pipe Manufacturing Process</h2>
+      <p class="section-p align-center">Our state-of-the-art extrusion technology ensures consistent quality, optimal material properties, and dimensional accuracy in every pipe we manufacture.</p>
+
+      <div class="process-tabs" id="processTabs">
+        <button class="ptab active" data-i="0">Raw Material</button>
+        <span class="ptab-sep">—</span>
+        <button class="ptab" data-i="1">Extrusion</button>
+        <span class="ptab-sep">—</span>
+        <button class="ptab" data-i="2">Cooling</button>
+        <span class="ptab-sep">—</span>
+        <button class="ptab" data-i="3">Sizing</button>
+        <span class="ptab-sep">—</span>
+        <button class="ptab" data-i="4">Quality Control</button>
+        <span class="ptab-sep">—</span>
+        <button class="ptab" data-i="5">Marking</button>
+        <span class="ptab-sep">—</span>
+        <button class="ptab" data-i="6">Cutting</button>
+        <span class="ptab-sep">—</span>
+        <button class="ptab" data-i="7">Packaging</button>
+      </div>
+
+      <div class="process-panel">
+        <div class="process-panel__left">
+          <h3 id="procTitle">High-Grade Raw Material Selection</h3>
+          <p id="procDesc">Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.</p>
+          <ul id="procList">
+            <li><span class="check-blue">&#10004;</span> PE100 grade material</li>
+            <li><span class="check-blue">&#10004;</span> Optimal molecular weight distribution</li>
           </ul>
-          <a href="#" class="btn btn--outline btn--full">Contact sales</a>
+        </div>
+        <div class="process-panel__right">
+          <img id="procImg" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Process" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPLICATIONS CAROUSEL ===== -->
+  <section class="applications section-pad">
+    <div class="applications__head container">
+      <div class="applications__text">
+        <h2 class="section-h2 align-left">Versatile Applications Across Industries</h2>
+        <p class="section-p align-left">From technical textiles to packaging materials, our precision-engineered machinery delivers superior performance across diverse applications.</p>
+      </div>
+      <div class="applications__btns">
+        <button class="round-btn" id="appPrev">&#8592;</button>
+        <button class="round-btn" id="appNext">&#8594;</button>
+      </div>
+    </div>
+    <div class="app-carousel-wrap">
+      <div class="app-carousel" id="appCarousel">
+        <div class="app-card">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80" alt="Fishnet Manufacturing" />
+          <div class="app-card__info">
+            <h3>Fishnet Manufacturing</h3>
+            <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=500&q=80" alt="Fishnet Manufacturing" />
+          <div class="app-card__info">
+            <h3>Fishnet Manufacturing</h3>
+            <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Fishnet Manufacturing" />
+          <div class="app-card__info">
+            <h3>Fishnet Manufacturing</h3>
+            <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=500&q=80" alt="Fishnet Manufacturing" />
+          <div class="app-card__info">
+            <h3>Fishnet Manufacturing</h3>
+            <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+          </div>
+        </div>
+        <div class="app-card">
+          <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=500&q=80" alt="Fishnet Manufacturing" />
+          <div class="app-card__info">
+            <h3>Fishnet Manufacturing</h3>
+            <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECH SPECS ===== -->
+  <section class="specs section-pad" id="specs">
+    <div class="specs-bg">
+      <div class="container">
+        <h2 class="specs__title">Technical Specifications at a Glance</h2>
+        <p class="specs__sub">Comprehensive performance data demonstrating our commitment to quality and engineering excellence.</p>
+
+        <div class="specs-table">
+          <div class="specs-table__head">
+            <span>PARAMETER</span>
+            <span>SPECIFICATION</span>
+          </div>
+          <div class="specs-row"><span>Pipe Diameter Range</span><span>20mm to 1600mm (3/4″ to 63″)</span></div>
+          <div class="specs-row"><span>Pressure Ratings</span><span>PN 2.5, PN 4, PN 6, PN 8, PN 10, PN 12.5, PN 16</span></div>
+          <div class="specs-row"><span>Standard Dimension Ratio</span><span>SDR 33, SDR 26, SDR 21, SDR 17, SDR 13.6, SDR 11</span></div>
+          <div class="specs-row"><span>Operating Temperature</span><span>-40C to +80C (-40F to +176F)</span></div>
+          <div class="specs-row"><span>Service Life</span><span>50+ Years (at 20 degrees C, PN 10)</span></div>
+          <div class="specs-row"><span>Material Density</span><span>0.95 - 0.96 g/cm3</span></div>
+          <div class="specs-row"><span>Certification Standards</span><span>IS 5984, ISO 4427, ASTM D3035</span></div>
+          <div class="specs-row"><span>Joint Type</span><span>Butt Fusion, Electrofusion, Mechanical</span></div>
+          <div class="specs-row"><span>Coil Lengths</span><span>Up to 500mm (for smaller diameters)</span></div>
+          <div class="specs-row"><span>Country of Origin</span><span>&#127470;&#127475; India</span></div>
+        </div>
+
+        <div class="center-cta">
+          <a href="#" class="btn btn-outline-white btn-lg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Full Technical Datasheet
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="testimonials" id="testimonials" aria-labelledby="testimonialsHeading">
-    <div class="section-inner">
-      <div class="section-label">Stories</div>
-      <h2 class="section-heading" id="testimonialsHeading">What our clients say</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">"We hired a senior engineer in 36 hours. The candidate was better than anyone we'd found in months of traditional recruiting."</p>
-          <div class="testimonial-card__author">
-            <img src="https://i.pravatar.cc/60?img=8" alt="Sarah K." loading="lazy" />
-            <div>
-              <p class="author-name">Sarah K.</p>
-              <p class="author-title">CTO, Fintech startup</p>
+  <section class="testimonials section-pad">
+    <div class="container">
+      <h2 class="section-h2 align-center">Trusted Performance. Proven Results</h2>
+      <p class="section-p align-center">From innovative Two-For-One Twisters to specialized heat setting machines, we deliver complete solutions for modern textile manufacturing.</p>
+      <div class="testi-track-outer">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p>Exceeded our FIBC production efficiency! The TFO machines have significantly improved our FIBC production efficiency. Their engineering delivers the strength critical for our bulk solutions.</p>
+            <div class="testi-author">
+              <div class="testi-avatar"></div>
+              <div><p class="testi-name">H. Mueller</p><p class="testi-role">Operations Director</p></div>
             </div>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">"Gushwork is our secret weapon. We've scaled our engineering team from 3 to 18 in under a year — all through them."</p>
-          <div class="testimonial-card__author">
-            <img src="https://i.pravatar.cc/60?img=15" alt="James T." loading="lazy" />
-            <div>
-              <p class="author-name">James T.</p>
-              <p class="author-title">CEO, SaaS platform</p>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p>Excellent support for specialized applications. The durability and performance of Meera's fishnet processing equipment has significantly improved our marine product quality. Excellent support for specialized applications.</p>
+            <div class="testi-author">
+              <div class="testi-avatar"></div>
+              <div><p class="testi-name">Carlos Mendoza</p><p class="testi-role">Operations Manager</p></div>
             </div>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-card__quote">"The vetting process is rigorous. Everyone we've hired has been exceptional and integrated seamlessly with our team."</p>
-          <div class="testimonial-card__author">
-            <img src="https://i.pravatar.cc/60?img=25" alt="Rekha P." loading="lazy" />
-            <div>
-              <p class="author-name">Rekha P.</p>
-              <p class="author-title">VP Engineering, Scale-up</p>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p>Excellent support for specialized applications. The durability and performance of Meera's fishnet processing equipment has significantly improved our marine product quality. Excellent support for specialized applications.</p>
+            <div class="testi-author">
+              <div class="testi-avatar"></div>
+              <div><p class="testi-name">Carlos Mendoza</p><p class="testi-role">Operations Manager</p></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <p>Provides the exact specs we need! For our technical textile applications, specialized machinery provides all the specifications we need. Their unique automotive textile requirements.</p>
+            <div class="testi-author">
+              <div class="testi-avatar"></div>
+              <div><p class="testi-name">Rajesh Kumar</p><p class="testi-role">Manufacturing Head</p></div>
             </div>
           </div>
         </div>
@@ -456,47 +389,221 @@
     </div>
   </section>
 
-  <!-- ===== CTA STRIP ===== -->
-  <section class="cta-strip" aria-label="Call to action">
-    <div class="cta-strip__inner">
-      <h2 class="cta-strip__heading">Ready to hire better, faster?</h2>
-      <p class="cta-strip__sub">Join 500+ companies building with world-class remote talent.</p>
-      <a href="#" class="btn btn--white btn--lg">Start hiring today →</a>
+  <!-- ===== PORTFOLIO ===== -->
+  <section class="portfolio section-pad" id="products">
+    <div class="container">
+      <h2 class="section-h2 align-center">Complete Piping Solutions Portfolio</h2>
+      <p class="section-p align-center">From innovative Two-For-One Twisters to specialized heat setting machines, we deliver complete solutions for modern textile manufacturing.</p>
+      <div class="portfolio-grid">
+        <div class="port-card">
+          <div class="port-card__body">
+            <h3>HDPE Fittings &amp; Accessories</h3>
+            <p>Complete range of electrofusion and butt fusion fittings, including elbows, tees, reducers, and couplers for seamless pipe connections.</p>
+          </div>
+          <div class="port-card__img">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80" alt="HDPE Fittings" />
+          </div>
+          <div class="port-card__footer">
+            <a href="#" class="btn btn-outline-gray btn-full">Learn More</a>
+          </div>
+        </div>
+        <div class="port-card">
+          <div class="port-card__body">
+            <h3>Professional Installation Services</h3>
+            <p>Expert installation and fusion welding services ensuring optimal system performance, compliance with standards, and long-term reliability.</p>
+          </div>
+          <div class="port-card__img">
+            <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=400&q=80" alt="Installation" />
+          </div>
+          <div class="port-card__footer">
+            <a href="#" class="btn btn-outline-gray btn-full">Learn More</a>
+          </div>
+        </div>
+        <div class="port-card">
+          <div class="port-card__body">
+            <h3>PE-RT Heating Pipes</h3>
+            <p>Polyethylene of Raised Temperature resistance pipes ideal for underfloor heating, radiator connections, and hot water applications.</p>
+          </div>
+          <div class="port-card__img">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="PE-RT" />
+          </div>
+          <div class="port-card__footer">
+            <a href="#" class="btn btn-outline-gray btn-full">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq section-pad">
+    <div class="container">
+      <h2 class="faq__heading"><span class="blue-text">Frequently</span> Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item" data-open="true">
+          <button class="faq-q">What is the purpose of a laser cutter for sheet metal?<span class="faq-icon">&#8963;</span></button>
+          <div class="faq-a open">It is designed to cut various types of sheet metal with precision, allowing for intricate designs and shapes that are essential in manufacturing processes.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What are the benefits of using aluminum tubing in manufacturing?<span class="faq-icon">&#8964;</span></button>
+          <div class="faq-a">Aluminum tubing offers excellent strength-to-weight ratio, corrosion resistance, and ease of fabrication, making it ideal for diverse manufacturing applications.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How is aluminum tubing produced?<span class="faq-icon">&#8964;</span></button>
+          <div class="faq-a">Aluminum tubing is produced through extrusion, drawing, or rolling processes using high-grade aluminum alloys to ensure consistent quality.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What are the common applications of aluminum tubing?<span class="faq-icon">&#8964;</span></button>
+          <div class="faq-a">Common applications include structural frames, heat exchangers, automotive parts, aerospace components, and industrial machinery.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can aluminum tubing be customized?<span class="faq-icon">&#8964;</span></button>
+          <div class="faq-a">Yes, aluminum tubing can be customized in diameter, wall thickness, length, alloy grade, and surface finish to meet specific project requirements.</div>
+        </div>
+      </div>
+
+      <!-- Email catalogue CTA -->
+      <div class="faq-email-box">
+        <div>
+          <h3>Want us to email the entire catalogue?</h3>
+          <p>Enter your email and an expert will share the catalogue with you.</p>
+        </div>
+        <div class="faq-email-form">
+          <input type="email" placeholder="Email Address" />
+          <button class="btn btn-navy btn-full">Request Catalogue</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERT BANNER ===== -->
+  <section class="expert-banner" id="about">
+    <div class="container">
+      <div class="expert-banner__inner">
+        <div>
+          <p class="expert-banner__title">Didn't find what <span class="blue-text">you're looking for?</span></p>
+          <p class="expert-banner__sub">Talk to our experts for custom solutions and tailored guidence.</p>
+        </div>
+        <a href="#contact" class="btn btn-navy">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.6 19.79 19.79 0 01.22 1a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Talk to an Expert
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESOURCES ===== -->
+  <section class="resources section-pad">
+    <div class="container">
+      <h2 class="section-h2 align-center">Resources &amp; Downloads</h2>
+      <p class="section-p align-center">Get all the technical documentation and resources you need to make informed decisions about our HDPE piping solutions.</p>
+      <div class="resources-box">
+        <div class="resource-row">
+          <span>HDPE Pipe Installation Manual (PDF)</span>
+          <a href="#" class="dl-link">Download PDF <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+        </div>
+        <div class="resource-row">
+          <span>Maintenance &amp; Inspection Handbook (PDF)</span>
+          <a href="#" class="dl-link">Download PDF <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+        </div>
+        <div class="resource-row">
+          <span>Engineering Specifications Sheet (PDF)</span>
+          <a href="#" class="dl-link">Download PDF <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT CTA ===== -->
+  <section class="contact-cta" id="contact">
+    <div class="container">
+      <div class="contact-cta__inner">
+        <div class="contact-cta__left">
+          <h2>Ready to Transform Your Textile Manufacturing?</h2>
+          <p>Get a personalized consultation and quote for machinery solutions tailored to your specific production requirements.</p>
+          <hr />
+          <p class="contact-cta__note">For immediate assistance, feel free to give us a direct call at <strong>+91-XXX-XXX-XXXX</strong>. You can also send us a quick email at <a href="mailto:info@meeraind.com">info@meeraind.com</a></p>
+        </div>
+        <div class="contact-cta__form">
+          <h3>Contact Us Today</h3>
+          <input type="text" placeholder="Full Name" />
+          <input type="text" placeholder="Company Name" />
+          <input type="email" placeholder="Email Address" />
+          <div class="phone-row">
+            <select class="phone-code"><option>+91 &#8964;</option></select>
+            <input type="tel" placeholder="7003026616" />
+          </div>
+          <button class="btn btn-dark btn-full">Request Custom Quote</button>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner">
-      <div class="footer__brand">
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand-bar">
         <a href="#" class="logo">
-          <span class="logo__mark">G</span>
-          <span class="logo__text">gushwork</span>
+          <div class="logo__wordmark">
+            <span class="logo__name">M<span class="logo__rest">ANGALAM</span></span>
+            <span class="logo__sub">HDPE <span class="logo__pipe">|</span> PIPES</span>
+          </div>
         </a>
-        <p class="footer__tagline">World-class remote talent, placed in 48 hours.</p>
+        <p class="footer__tagline">Premium <span class="blue-text">HDPE Pipes &amp; Fittings Manufacturer</span> in South India</p>
       </div>
-      <nav class="footer__links" aria-label="Footer navigation">
+
+      <div class="footer__links-grid">
         <div class="footer__col">
-          <p class="footer__col-heading">Product</p>
-          <a href="#">How it works</a>
-          <a href="#">Talent network</a>
-          <a href="#">Pricing</a>
+          <h4>About Us</h4>
+          <a href="#">About Us</a>
         </div>
         <div class="footer__col">
-          <p class="footer__col-heading">Company</p>
-          <a href="#">About</a>
-          <a href="#">Blog</a>
-          <a href="#">Careers</a>
+          <h4>Categories</h4>
+          <a href="#">Packaging Industry Solutions</a>
+          <a href="#">Fishnet Manufacturing</a>
+          <a href="#">PPMF/Tapes and Twines</a>
+          <a href="#">FIBC and Woven Sack</a>
+          <a href="#">Carpet and Rugs Industry</a>
+          <a href="#">Technical Textiles</a>
         </div>
         <div class="footer__col">
-          <p class="footer__col-heading">Legal</p>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
+          <h4>Products</h4>
+          <a href="#">Two For One Twister</a>
+          <a href="#">TPRS Twister Machine</a>
+          <a href="#">Ring Twisting Machines</a>
+          <a href="#">Covering Machines</a>
+          <a href="#">Heat Setting Equipment</a>
+          <a href="#">Servo Controlled Winders</a>
         </div>
-      </nav>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <p class="footer__contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 2126, Road No. 2, GIDC Sachin, Surat - 394 230 Gujarat, India</p>
+          <p class="footer__contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.6 19.79 19.79 0 01.22 1a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> +91-XXX-XXX-XXXX</p>
+          <p class="footer__contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@meeraind.com</p>
+          <p class="footer__contact-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> support@meeraind.com</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="LinkedIn" class="social-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#2C3E8C"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="X / Twitter" class="social-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#2C3E8C"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.636zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C3E8C" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="footer__bottom">
-      <p>© 2025 Gushwork. All rights reserved.</p>
+      <div class="container footer__bottom-inner">
+        <p>Copyright &copy; 2025 Meera Industries Limited | All Rights Reserved</p>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
     </div>
   </footer>
 

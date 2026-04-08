@@ -1,419 +1,371 @@
 /**
- * script.js — Gushwork landing page interactions
- *
- * Features:
- *  1. Sticky header — slides in after scrolling past the first fold,
- *                     slides out when scrolling back up.
- *  2. Image carousel — drag/swipe, prev/next buttons, dot navigation.
- *  3. Carousel zoom   — hover over a card → overlay with zoomed info panel.
- *  4. Mobile menu     — hamburger toggle.
- *  5. Scroll reveal   — fade-in elements as they enter the viewport.
+ * script.js — Mangalam HDPE Pipes
+ * All interactive functionality:
+ *  1. Sticky header (slides in on scroll up past hero)
+ *  2. Navbar scroll shadow
+ *  3. Mobile hamburger menu
+ *  4. Image gallery carousel + zoom-on-hover
+ *  5. Manufacturing process tabs
+ *  6. Applications drag carousel
+ *  7. Testimonials auto-scroll
+ *  8. FAQ accordion
+ *  9. Scroll reveal animations
  */
 
 (function () {
     'use strict';
   
-    /* ─────────────────────────────────────────────────────────────
+    /* ─────────────────────────────────────────────────
        1. STICKY HEADER
-       Shows when user scrolls below the hero (first viewport height).
-       Hides when scrolling back to the top.
-    ───────────────────────────────────────────────────────────── */
-    const stickyHeader  = document.getElementById('stickyHeader');
-    const mainNav       = document.getElementById('mainNav');
-    let   lastScrollY   = 0;
-    let   ticking       = false;
+       Appears when user scrolls UP past the first fold.
+       Disappears when scrolling down or near top.
+    ───────────────────────────────────────────────── */
+    const stickyHeader = document.getElementById('stickyHeader');
+    const navbar       = document.getElementById('navbar');
+    let lastScrollY    = 0;
+    let ticking        = false;
   
-    /**
-     * Determine whether to show or hide the sticky header.
-     * Threshold = height of the viewport (i.e. past the first fold).
-     */
-    function updateStickyHeader() {
-      const currentY  = window.scrollY;
-      const threshold = window.innerHeight * 0.85; // 85% of viewport
+    function handleScroll() {
+      const y         = window.scrollY;
+      const threshold = window.innerHeight * 0.8;
   
-      if (currentY > threshold && currentY < lastScrollY) {
-        // Scrolling UP and past the fold → show sticky header
-        stickyHeader.classList.add('visible');
-      } else if (currentY <= threshold || currentY > lastScrollY) {
-        // Scrolling DOWN, or back near top → hide sticky header
-        stickyHeader.classList.remove('visible');
+      /* Navbar shadow */
+      if (navbar) {
+        navbar.classList.toggle('scrolled', y > 10);
       }
   
-      lastScrollY = currentY;
+      /* Sticky header: show when scrolling UP past the fold */
+      if (stickyHeader) {
+        if (y > threshold && y < lastScrollY) {
+          stickyHeader.classList.add('visible');
+        } else {
+          stickyHeader.classList.remove('visible');
+        }
+      }
+  
+      lastScrollY = y;
       ticking     = false;
     }
   
     window.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(updateStickyHeader);
-        ticking = true;
-      }
+      if (!ticking) { requestAnimationFrame(handleScroll); ticking = true; }
     }, { passive: true });
   
   
-    /* ─────────────────────────────────────────────────────────────
+    /* ─────────────────────────────────────────────────
        2. MOBILE MENU
-    ───────────────────────────────────────────────────────────── */
+    ───────────────────────────────────────────────── */
     const hamburger  = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
   
     if (hamburger && mobileMenu) {
       hamburger.addEventListener('click', function () {
-        const isOpen = mobileMenu.classList.toggle('open');
-        hamburger.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', isOpen.toString());
-        mobileMenu.setAttribute('aria-hidden', (!isOpen).toString());
+        const open = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('open', open);
+        hamburger.setAttribute('aria-expanded', String(open));
       });
-  
-      // Close menu when a link inside is clicked
-      mobileMenu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
+      mobileMenu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
           mobileMenu.classList.remove('open');
           hamburger.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-          mobileMenu.setAttribute('aria-hidden', 'true');
         });
       });
     }
   
   
-    /* ─────────────────────────────────────────────────────────────
-       3. IMAGE CAROUSEL
-       - Scroll snapping via CSS
-       - Prev / Next buttons
-       - Dot navigation
-       - Mouse drag support
-       - Touch swipe support
-       - Active-dot reflects scroll position
-    ───────────────────────────────────────────────────────────── */
-    const carousel    = document.getElementById('carousel');
-    const prevBtn     = document.getElementById('prevBtn');
-    const nextBtn     = document.getElementById('nextBtn');
-    const dotsWrapper = document.getElementById('carouselDots');
+    /* ─────────────────────────────────────────────────
+       3. IMAGE GALLERY + ZOOM-ON-HOVER
+       - Click thumbnails to switch main image
+       - Arrow buttons cycle through images
+       - Hover main image → zoom lens + result panel
+    ───────────────────────────────────────────────── */
+    const mainImg   = document.getElementById('mainImg');
+    const galWrap   = document.getElementById('galWrap');
+    const galThumbs = document.getElementById('galThumbs');
+    const galPrev   = document.getElementById('galPrev');
+    const galNext   = document.getElementById('galNext');
+    const zoomLens  = document.getElementById('zoomLens');
+    const zoomResult= document.getElementById('zoomResult');
   
-    if (carousel && prevBtn && nextBtn && dotsWrapper) {
-      const cards     = Array.from(carousel.querySelectorAll('.carousel__card'));
-      const cardCount = cards.length;
-      let   currentIndex = 0;
+    if (mainImg && galThumbs) {
+      const thumbEls = Array.from(galThumbs.querySelectorAll('.gallery__thumb'));
+      let currentIdx = 0;
   
-      // ── Build dots ──────────────────────────────────────────
-      cards.forEach(function (_, i) {
-        const dot  = document.createElement('button');
-        dot.className  = 'carousel__dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('role', 'tab');
-        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-        dot.addEventListener('click', function () { scrollToCard(i); });
-        dotsWrapper.appendChild(dot);
-      });
-  
-      const dots = dotsWrapper.querySelectorAll('.carousel__dot');
-  
-      // ── Scroll to a specific card index ────────────────────
-      function scrollToCard(index) {
-        index = Math.max(0, Math.min(index, cardCount - 1));
-        currentIndex = index;
-  
-        const card   = cards[index];
-        const offset = card.offsetLeft - carousel.offsetLeft;
-        carousel.scrollTo({ left: offset, behavior: 'smooth' });
-  
-        updateDots();
-        updateButtons();
+      /* Switch image */
+      function switchImage(idx) {
+        idx = (idx + thumbEls.length) % thumbEls.length;
+        currentIdx = idx;
+        const src = thumbEls[idx].dataset.src;
+        mainImg.src = src;
+        /* zoom result uses same src */
+        if (zoomResult) {
+          zoomResult.style.backgroundImage = 'url(' + src + ')';
+        }
+        thumbEls.forEach(function (t, i) { t.classList.toggle('active', i === idx); });
       }
   
-      // ── Update active dot ───────────────────────────────────
-      function updateDots() {
-        dots.forEach(function (d, i) {
-          const isActive = (i === currentIndex);
-          d.classList.toggle('active', isActive);
-          d.setAttribute('aria-selected', isActive.toString());
+      thumbEls.forEach(function (thumb, i) {
+        thumb.addEventListener('click', function () { switchImage(i); });
+      });
+  
+      if (galPrev) galPrev.addEventListener('click', function () { switchImage(currentIdx - 1); });
+      if (galNext) galNext.addEventListener('click', function () { switchImage(currentIdx + 1); });
+  
+      /* Init zoom result bg */
+      if (zoomResult) {
+        zoomResult.style.backgroundImage = 'url(' + mainImg.src + ')';
+        zoomResult.style.backgroundSize  = '300%';
+      }
+  
+      /* Zoom on hover */
+      if (galWrap && zoomLens && zoomResult) {
+        const ZOOM = 3; /* magnification factor */
+  
+        galWrap.addEventListener('mousemove', function (e) {
+          const rect   = galWrap.getBoundingClientRect();
+          const lw     = zoomLens.offsetWidth;
+          const lh     = zoomLens.offsetHeight;
+  
+          /* Lens position (clamped inside image) */
+          let lx = e.clientX - rect.left - lw / 2;
+          let ly = e.clientY - rect.top  - lh / 2;
+          lx = Math.max(0, Math.min(lx, rect.width  - lw));
+          ly = Math.max(0, Math.min(ly, rect.height - lh));
+  
+          zoomLens.style.left = lx + 'px';
+          zoomLens.style.top  = ly + 'px';
+  
+          /* Background position for result panel */
+          const bx = -(lx * ZOOM) + 'px';
+          const by = -(ly * ZOOM) + 'px';
+          zoomResult.style.backgroundPosition = bx + ' ' + by;
+          zoomResult.style.backgroundSize     = (rect.width * ZOOM) + 'px ' + (rect.height * ZOOM) + 'px';
+        });
+  
+        galWrap.addEventListener('mouseenter', function () {
+          zoomLens.style.opacity = '1';
+          zoomResult.style.display = 'block';
+          zoomResult.style.backgroundImage = 'url(' + mainImg.src + ')';
+        });
+  
+        galWrap.addEventListener('mouseleave', function () {
+          zoomLens.style.opacity = '0';
+          zoomResult.style.display = 'none';
         });
       }
-  
-      // ── Update button disabled states ───────────────────────
-      function updateButtons() {
-        prevBtn.disabled = (currentIndex === 0);
-        nextBtn.disabled = (currentIndex === cardCount - 1);
-      }
-  
-      // ── Button clicks ───────────────────────────────────────
-      prevBtn.addEventListener('click', function () { scrollToCard(currentIndex - 1); });
-      nextBtn.addEventListener('click', function () { scrollToCard(currentIndex + 1); });
-  
-      // ── Keyboard navigation inside carousel ────────────────
-      carousel.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft')  scrollToCard(currentIndex - 1);
-        if (e.key === 'ArrowRight') scrollToCard(currentIndex + 1);
-      });
-  
-      // ── Sync dots with native scroll (touch / trackpad) ────
-      let scrollTimer;
-      carousel.addEventListener('scroll', function () {
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(function () {
-          // Find which card is most visible
-          let closestIndex = 0;
-          let minDist      = Infinity;
-  
-          cards.forEach(function (card, i) {
-            const cardLeft  = card.offsetLeft - carousel.offsetLeft;
-            const dist      = Math.abs(carousel.scrollLeft - cardLeft);
-            if (dist < minDist) {
-              minDist      = dist;
-              closestIndex = i;
-            }
-          });
-  
-          currentIndex = closestIndex;
-          updateDots();
-          updateButtons();
-        }, 80);
-      }, { passive: true });
-  
-      // ── Mouse drag support ──────────────────────────────────
-      let isDragging   = false;
-      let dragStartX   = 0;
-      let scrollStartX = 0;
-  
-      carousel.addEventListener('mousedown', function (e) {
-        isDragging   = true;
-        dragStartX   = e.clientX;
-        scrollStartX = carousel.scrollLeft;
-        carousel.classList.add('dragging');
-      });
-  
-      document.addEventListener('mousemove', function (e) {
-        if (!isDragging) return;
-        const dx = e.clientX - dragStartX;
-        carousel.scrollLeft = scrollStartX - dx;
-      });
-  
-      document.addEventListener('mouseup', function () {
-        if (!isDragging) return;
-        isDragging = false;
-        carousel.classList.remove('dragging');
-      });
-  
-      // ── Auto-play (optional, subtle) ────────────────────────
-      let autoPlayInterval = setInterval(function () {
-        if (currentIndex < cardCount - 1) {
-          scrollToCard(currentIndex + 1);
-        } else {
-          scrollToCard(0);
-        }
-      }, 4500);
-  
-      // Pause auto-play on user interaction
-      function pauseAutoPlay() {
-        clearInterval(autoPlayInterval);
-      }
-  
-      carousel.addEventListener('mouseenter', pauseAutoPlay);
-      carousel.addEventListener('touchstart', pauseAutoPlay, { passive: true });
-      prevBtn.addEventListener('click', pauseAutoPlay);
-      nextBtn.addEventListener('click', pauseAutoPlay);
-      dotsWrapper.addEventListener('click', pauseAutoPlay);
-  
-      // Init
-      updateDots();
-      updateButtons();
     }
   
   
-    /* ─────────────────────────────────────────────────────────────
-       4. CAROUSEL ZOOM — Enhanced hover zoom effect
-       Adds a floating large-preview panel to the right of hovered card.
-    ───────────────────────────────────────────────────────────── */
-    const carouselCards = document.querySelectorAll('.carousel__card');
-  
-    carouselCards.forEach(function (card) {
-      const imgEl = card.querySelector('.carousel__img');
-      if (!imgEl) return;
-  
-      // Create a floating zoom panel
-      const zoomPanel = document.createElement('div');
-      zoomPanel.className     = 'zoom-panel';
-      zoomPanel.setAttribute('aria-hidden', 'true');
-  
-      const zoomImg = document.createElement('img');
-      zoomImg.src   = imgEl.src;
-      zoomImg.alt   = '';
-  
-      // Get tags from the inline zoom overlay
-      const zoomInfo = card.querySelector('.zoom__info');
-      const infoClone = zoomInfo ? zoomInfo.cloneNode(true) : null;
-  
-      zoomPanel.appendChild(zoomImg);
-      if (infoClone) zoomPanel.appendChild(infoClone);
-      document.body.appendChild(zoomPanel);
-  
-      // Apply styles
-      Object.assign(zoomPanel.style, {
-        position:     'fixed',
-        width:        '200px',
-        height:       '240px',
-        borderRadius: '16px',
-        overflow:     'hidden',
-        boxShadow:    '0 24px 64px rgba(0,0,0,0.22)',
-        border:       '3px solid #fff',
-        pointerEvents:'none',
-        opacity:      '0',
-        transform:    'scale(0.88) translateY(8px)',
-        transition:   'opacity 0.25s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1)',
-        zIndex:       '9999',
-      });
-  
-      Object.assign(zoomImg.style, {
-        width:      '100%',
-        height:     '100%',
-        objectFit:  'cover',
-        display:    'block',
-      });
-  
-      // Position and show on hover
-      card.addEventListener('mouseenter', function (e) {
-        positionZoomPanel(card, zoomPanel);
-        zoomPanel.style.opacity   = '1';
-        zoomPanel.style.transform = 'scale(1) translateY(0)';
-      });
-  
-      card.addEventListener('mouseleave', function () {
-        zoomPanel.style.opacity   = '0';
-        zoomPanel.style.transform = 'scale(0.88) translateY(8px)';
-      });
-  
-      // Update position on scroll (so it doesn't detach)
-      carousel.addEventListener('scroll', function () {
-        if (zoomPanel.style.opacity === '1') {
-          positionZoomPanel(card, zoomPanel);
-        }
-      }, { passive: true });
-    });
-  
-    /**
-     * Position the floating zoom panel to the right of the card,
-     * or to the left if not enough space on the right.
-     */
-    function positionZoomPanel(card, panel) {
-      const rect      = card.getBoundingClientRect();
-      const panelW    = 200;
-      const panelH    = 240;
-      const margin    = 12;
-      const vpW       = window.innerWidth;
-      const vpH       = window.innerHeight;
-  
-      let left, top;
-  
-      // Prefer right side
-      if (rect.right + panelW + margin <= vpW) {
-        left = rect.right + margin;
-      } else {
-        left = rect.left - panelW - margin;
+    /* ─────────────────────────────────────────────────
+       4. MANUFACTURING PROCESS TABS
+    ───────────────────────────────────────────────── */
+    const tabData = [
+      {
+        title: 'High-Grade Raw Material Selection',
+        desc:  'Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.',
+        list:  ['PE100 grade material', 'Optimal molecular weight distribution'],
+        img:   'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80'
+      },
+      {
+        title: 'Precision Extrusion Process',
+        desc:  'Our state-of-the-art single-screw extruders with barrier screws ensure complete homogenization of the HDPE compound for consistent output.',
+        list:  ['Controlled melt temperature', 'Barrier screw design for optimal mixing'],
+        img:   'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=600&q=80'
+      },
+      {
+        title: 'Precision Cooling System',
+        desc:  'Multi-stage vacuum cooling tanks quench the pipe rapidly to lock in dimensional stability and maintain crystalline structure uniformity.',
+        list:  ['Multi-stage vacuum cooling', 'Consistent wall thickness'],
+        img:   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'
+      },
+      {
+        title: 'Accurate Sizing & Calibration',
+        desc:  'Precision vacuum sizing bells ensure correct outer diameter and roundness as the pipe exits the extruder head.',
+        list:  ['Vacuum sizing bells', 'Real-time diameter monitoring'],
+        img:   'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=80'
+      },
+      {
+        title: 'Rigorous Quality Control',
+        desc:  'Each pipe undergoes dimensional verification, hydrostatic pressure testing, and visual inspection before leaving the production floor.',
+        list:  ['Hydrostatic pressure testing', 'Dimensional verification at every meter'],
+        img:   'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&q=80'
+      },
+      {
+        title: 'Permanent Pipe Marking',
+        desc:  'Inkjet printing systems apply permanent traceability markings including product code, dimensions, pressure rating, and production date.',
+        list:  ['Inkjet traceability printing', 'Meets IS/ISO marking standards'],
+        img:   'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=70'
+      },
+      {
+        title: 'Automated Cutting to Length',
+        desc:  'Flying saws and planetary cutting systems cut pipes to precise lengths without deforming or stressing the pipe ends.',
+        list:  ['Flying saw technology', 'Burr-free, square-ended cuts'],
+        img:   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=70'
+      },
+      {
+        title: 'Protective Packaging',
+        desc:  'Pipes are bundled, capped, and wrapped to protect against UV exposure and mechanical damage during storage and transit.',
+        list:  ['End caps for bore protection', 'UV-resistant wrapping for storage'],
+        img:   'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=600&q=70'
       }
+    ];
   
-      // Vertically centred on card
-      top = rect.top + (rect.height / 2) - (panelH / 2);
-      top = Math.max(8, Math.min(top, vpH - panelH - 8));
+    const processTabs = document.getElementById('processTabs');
+    const procTitle   = document.getElementById('procTitle');
+    const procDesc    = document.getElementById('procDesc');
+    const procList    = document.getElementById('procList');
+    const procImg     = document.getElementById('procImg');
   
-      panel.style.left = left + 'px';
-      panel.style.top  = top  + 'px';
-    }
+    if (processTabs) {
+      processTabs.querySelectorAll('.ptab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          /* Update active tab */
+          processTabs.querySelectorAll('.ptab').forEach(function (t) { t.classList.remove('active'); });
+          tab.classList.add('active');
   
-    // Clean up zoom panels when page is hidden (tab switch)
-    document.addEventListener('visibilitychange', function () {
-      document.querySelectorAll('.zoom-panel').forEach(function (p) {
-        p.style.opacity = '0';
-      });
-    });
-  
-  
-    /* ─────────────────────────────────────────────────────────────
-       5. SCROLL REVEAL ANIMATIONS
-       Adds .in-view to elements with .reveal when they enter viewport.
-    ───────────────────────────────────────────────────────────── */
-    const revealTargets = document.querySelectorAll(
-      '.step-card, .pricing-card, .testimonial-card, ' +
-      '.section-heading, .section-subtext, .section-label, ' +
-      '.hero__badge, .hero__heading, .hero__subtext, .hero__actions, .hero__stats'
-    );
-  
-    // Add reveal class programmatically
-    revealTargets.forEach(function (el, i) {
-      el.classList.add('reveal');
-      // Stagger siblings
-      const parent  = el.parentElement;
-      const siblings = parent ? parent.querySelectorAll(':scope > .reveal') : [];
-      const sibIndex = Array.from(siblings).indexOf(el);
-      if (sibIndex > 0 && sibIndex <= 3) {
-        el.classList.add('reveal--delay-' + sibIndex);
-      }
-    });
-  
-    // IntersectionObserver for reveals
-    if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            revealObserver.unobserve(entry.target); // only animate once
+          /* Update panel content */
+          const i    = parseInt(tab.dataset.i, 10);
+          const data = tabData[i];
+          if (procTitle) procTitle.textContent = data.title;
+          if (procDesc)  procDesc.textContent  = data.desc;
+          if (procList) {
+            procList.innerHTML = data.list
+              .map(function (item) { return '<li><span class="check-blue">&#10004;</span> ' + item + '</li>'; })
+              .join('');
+          }
+          if (procImg) {
+            procImg.style.opacity = '0';
+            procImg.src = data.img;
+            procImg.onload = function () {
+              procImg.style.transition = 'opacity 0.3s';
+              procImg.style.opacity = '1';
+            };
           }
         });
-      }, {
-        threshold:  0.12,
-        rootMargin: '0px 0px -40px 0px',
-      });
-  
-      revealTargets.forEach(function (el) {
-        revealObserver.observe(el);
-      });
-    } else {
-      // Fallback for older browsers
-      revealTargets.forEach(function (el) {
-        el.classList.add('in-view');
       });
     }
   
   
-    /* ─────────────────────────────────────────────────────────────
-       6. SMOOTH ANCHOR SCROLLING
-       Offset scrolls by the navbar height so sections aren't
-       hidden behind the fixed nav.
-    ───────────────────────────────────────────────────────────── */
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+    /* ─────────────────────────────────────────────────
+       5. APPLICATIONS DRAG CAROUSEL
+    ───────────────────────────────────────────────── */
+    const appCarousel = document.getElementById('appCarousel');
+    const appPrev     = document.getElementById('appPrev');
+    const appNext     = document.getElementById('appNext');
   
-        const target = document.querySelector(targetId);
-        if (!target) return;
+    if (appCarousel) {
+      /* Arrow navigation */
+      function slideApp(dir) {
+        const cardW = appCarousel.querySelector('.app-card').offsetWidth + 16;
+        appCarousel.scrollBy({ left: dir * cardW, behavior: 'smooth' });
+      }
+      if (appPrev) appPrev.addEventListener('click', function () { slideApp(-1); });
+      if (appNext) appNext.addEventListener('click', function () { slideApp(1); });
   
-        e.preventDefault();
+      /* Mouse drag */
+      let isDragging = false, dragStart = 0, scrollStart = 0;
+      appCarousel.addEventListener('mousedown',  function (e) { isDragging = true; dragStart = e.clientX; scrollStart = appCarousel.scrollLeft; appCarousel.classList.add('dragging'); });
+      document.addEventListener('mousemove', function (e) { if (!isDragging) return; appCarousel.scrollLeft = scrollStart - (e.clientX - dragStart); });
+      document.addEventListener('mouseup',   function ()  { isDragging = false; appCarousel.classList.remove('dragging'); });
+    }
   
-        const navHeight = parseInt(
-          getComputedStyle(document.documentElement).getPropertyValue('--nav-h'),
-          10
-        ) || 72;
   
-        const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+    /* ─────────────────────────────────────────────────
+       6. TESTIMONIALS DRAG CAROUSEL
+    ───────────────────────────────────────────────── */
+    const testiTrack = document.getElementById('testiTrack');
+    if (testiTrack) {
+      let isDragging = false, dragStart = 0, scrollStart = 0;
+      testiTrack.addEventListener('mousedown',  function (e) { isDragging = true; dragStart = e.clientX; scrollStart = testiTrack.scrollLeft; testiTrack.classList.add('dragging'); });
+      document.addEventListener('mousemove', function (e) { if (!isDragging) return; testiTrack.scrollLeft = scrollStart - (e.clientX - dragStart); });
+      document.addEventListener('mouseup',   function ()  { isDragging = false; testiTrack.classList.remove('dragging'); });
   
-        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      /* Auto-scroll testimonials */
+      let autoInterval = setInterval(function () {
+        const maxScroll = testiTrack.scrollWidth - testiTrack.clientWidth;
+        if (testiTrack.scrollLeft >= maxScroll - 5) {
+          testiTrack.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          testiTrack.scrollBy({ left: 280 + 16, behavior: 'smooth' });
+        }
+      }, 4000);
+  
+      testiTrack.addEventListener('mouseenter', function () { clearInterval(autoInterval); });
+      testiTrack.addEventListener('touchstart',  function () { clearInterval(autoInterval); }, { passive: true });
+    }
+  
+  
+    /* ─────────────────────────────────────────────────
+       7. FAQ ACCORDION
+    ───────────────────────────────────────────────── */
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+      const btn    = item.querySelector('.faq-q');
+      const answer = item.querySelector('.faq-a');
+      const icon   = item.querySelector('.faq-icon');
+  
+      if (!btn || !answer) return;
+  
+      btn.addEventListener('click', function () {
+        const isOpen = answer.classList.contains('open');
+  
+        /* Close all */
+        document.querySelectorAll('.faq-a').forEach(function (a) { a.classList.remove('open'); });
+        document.querySelectorAll('.faq-item').forEach(function (i) { i.removeAttribute('data-open'); });
+        document.querySelectorAll('.faq-icon').forEach(function (ic) { ic.textContent = '⌄'; });
+  
+        /* Open clicked if it was closed */
+        if (!isOpen) {
+          answer.classList.add('open');
+          item.setAttribute('data-open', 'true');
+          if (icon) icon.textContent = '⌃';
+        }
       });
     });
   
   
-    /* ─────────────────────────────────────────────────────────────
-       7. NAVBAR SCROLL EFFECT
-       Adds a subtle shadow to the main nav on scroll.
-    ───────────────────────────────────────────────────────────── */
-    if (mainNav) {
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 10) {
-          mainNav.style.boxShadow = '0 2px 12px rgba(0,0,0,0.06)';
-        } else {
-          mainNav.style.boxShadow = 'none';
-        }
-      }, { passive: true });
+    /* ─────────────────────────────────────────────────
+       8. SMOOTH ANCHOR SCROLLING
+    ───────────────────────────────────────────────── */
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        const id = this.getAttribute('href');
+        if (id === '#') return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'), 10) || 64;
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset - 12, behavior: 'smooth' });
+      });
+    });
+  
+  
+    /* ─────────────────────────────────────────────────
+       9. SCROLL REVEAL
+    ───────────────────────────────────────────────── */
+    const revealEls = document.querySelectorAll(
+      '.feat-card, .port-card, .testi-card, .faq-item, .specs-row, ' +
+      '.process-panel, .resource-row, .section-h2, .section-p, .faq__heading'
+    );
+  
+    const styleTag = document.createElement('style');
+    styleTag.textContent = '.reveal-init{opacity:0;transform:translateY(20px);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}.reveal-init.revealed{opacity:1;transform:translateY(0)}';
+    document.head.appendChild(styleTag);
+  
+    revealEls.forEach(function (el) { el.classList.add('reveal-init'); });
+  
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('revealed'); });
     }
   
   })();
