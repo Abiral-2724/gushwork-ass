@@ -1,25 +1,9 @@
-/**
- * script.js — Mangalam HDPE Pipes
- * All interactive functionality:
- *  1. Sticky header (slides in on scroll up past hero)
- *  2. Navbar scroll shadow
- *  3. Mobile hamburger menu
- *  4. Image gallery carousel + zoom-on-hover
- *  5. Manufacturing process tabs
- *  6. Applications drag carousel
- *  7. Testimonials auto-scroll
- *  8. FAQ accordion
- *  9. Scroll reveal animations
- */
+
 
 (function () {
     'use strict';
   
-    /* ─────────────────────────────────────────────────
-       1. STICKY HEADER
-       Appears when user scrolls UP past the first fold.
-       Disappears when scrolling down or near top.
-    ───────────────────────────────────────────────── */
+   
     const stickyHeader = document.getElementById('stickyHeader');
     const navbar       = document.getElementById('navbar');
     let lastScrollY    = 0;
@@ -52,9 +36,7 @@
     }, { passive: true });
   
   
-    /* ─────────────────────────────────────────────────
-       2. MOBILE MENU
-    ───────────────────────────────────────────────── */
+  
     const hamburger  = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
   
@@ -73,12 +55,7 @@
     }
   
   
-    /* ─────────────────────────────────────────────────
-       3. IMAGE GALLERY + ZOOM-ON-HOVER
-       - Click thumbnails to switch main image
-       - Arrow buttons cycle through images
-       - Hover main image → zoom lens + result panel
-    ───────────────────────────────────────────────── */
+   
     const mainImg   = document.getElementById('mainImg');
     const galWrap   = document.getElementById('galWrap');
     const galThumbs = document.getElementById('galThumbs');
